@@ -25,9 +25,12 @@ public:
     ~MainWindow();
     QTimer *timer=new QTimer();
     QTime time;
+    //para asignar las tarjetas
     QVector<QString> tarjetas{"tarjeta01", "tarjeta02", "tarjeta03", "tarjeta04","tarjeta05","tarjeta06"
                               "tarjeta07", "tarjeta08", "tarjeta09", "tarjeta10","tarjeta11","tarjeta12"
                               "tarjeta13", "tarjeta14", "tarjeta15", "tarjeta16","tarjeta17","tarjeta18"};
+
+    //para repartir cada una de las imagenes a cada tarjeta
     QHash<QString, QString> reparto;
     int puntaje=0;
     bool jugadaIniciada;
@@ -39,9 +42,9 @@ public:
 //declaracion de variables
 private slots:
     void actualizarCronometro();
-    void tarjetaDescubierta();
-    void mezclar(QVector<QString> &tarjetas);
-    void repartir(QVector<QString> &tarjetas, QHash<QString, QString> &reparto);
+    void tarjetaDescubierta(); //cada vez que se de click en un boton muestre la imagen
+    void mezclar(QVector<QString> &tarjetas); //mezclar los nombres de las tarjetas
+    void repartir(QVector<QString> &tarjetas, QHash<QString, QString> &reparto); //repartir a cada tarjeta una imagen
     void definirResultadoParcial();
     void reiniciarTarjetas();
     void mostrarImagen();
