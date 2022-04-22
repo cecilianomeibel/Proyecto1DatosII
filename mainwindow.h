@@ -34,8 +34,8 @@ public:
     QHash<QString, QString> reparto;
     int puntaje=0;
     bool jugadaIniciada;
-    QPushButton* tarjetaAnterior;
-    QPushButton* tarjetaActual;
+    QPushButton* tarjetaAnterior; //la primera tarjeta en voltearse
+    QPushButton* tarjetaActual; //la segunda tarjeta en voltearse
     int parejasRestantes;
     QMessageBox msgBox; //mensaje para mostrarle al usuario
 
