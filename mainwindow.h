@@ -25,16 +25,16 @@ public:
     ~MainWindow();
     QTimer *timer=new QTimer();
     QTime time;
-    QVector<QString> tarjetas{"tarjeta01", "tarjeta02", "tarjeta03", "tarjeta04",
-                              "tarjeta05", "tarjeta06", "tarjeta07", "tarjeta08",
-                              "tarjeta09", "tarjeta10", "tarjeta11", "tarjeta12"};
+    QVector<QString> tarjetas{"tarjeta01", "tarjeta02", "tarjeta03", "tarjeta04","tarjeta05","tarjeta06"
+                              "tarjeta07", "tarjeta08", "tarjeta09", "tarjeta10","tarjeta11","tarjeta12"
+                              "tarjeta13", "tarjeta14", "tarjeta15", "tarjeta16","tarjeta17","tarjeta18"};
     QHash<QString, QString> reparto;
     int puntaje=0;
     bool jugadaIniciada;
     QPushButton* tarjetaAnterior;
     QPushButton* tarjetaActual;
     int parejasRestantes;
-    QMessageBox msgBox;
+    QMessageBox msgBox; //mensaje para mostrarle al usuario
 
 
 private slots:
