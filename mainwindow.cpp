@@ -91,9 +91,9 @@ void MainWindow::definirResultadoFinal(){
 
     if (parejasRestantes==0){
         timer->stop(); // metodo para detener el reloj
-        msgBox.setText("¡Ha Ganado! El puntaje final es: " + QString::number(puntaje) + "\n¿Jugar de nuevo?");
-        if (QMessageBox::Yes == msgBox.exec()){
-            inicializarJuego();
+        msgBox.setText("¡Ha Ganado! El puntaje final es: " + QString::number(puntaje) + "\n¿Jugar de nuevo?"); //muestra un texto al usuario de que ha ganado el juego y pregunta si desea volver a jugar
+        if (QMessageBox::Yes == msgBox.exec()){ // compara para ver si el usuario presiono el boton de "Si"
+            inicializarJuego(); // se vuelve a reiniciar el juego
         }
         else{
             QCoreApplication::quit();
@@ -101,13 +101,13 @@ void MainWindow::definirResultadoFinal(){
     }
     else{
         if (time.toString()=="00:00:00"){
-            timer->stop();
+            timer->stop(); //detener el reloj
             ui->frame->setEnabled(false);
             msgBox.setText("Ha perdido ;( \n¿Jugar de nuevo?");
             if (QMessageBox::Yes == msgBox.exec()){
-                inicializarJuego();
+                inicializarJuego(); //se vuelve a reiniciar el juego
             }
-            else{
+            else{  //cierra el programa
                 QCoreApplication::quit();
             }
         }
