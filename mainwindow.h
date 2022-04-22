@@ -4,29 +4,55 @@
 #include <QMainWindow>
 #include <QTimer>
 #include <QTime>
+#include <QString>
+#include <QVector>
+#include <QHash>
+#include <QPushButton>
+#include <QMessageBox>
+#include <random>
 
-QT_BEGIN_NAMESPACE
-namespace Ui { class MainWindow; }
-QT_END_NAMESPACE
 
-class MainWindow : public QMainWindow
-{
+namespace Ui {
+    class MainWindow;
+}
+
+class MainWindow : public QMainWindow{
     Q_OBJECT
 
+
 public:
-    MainWindow(QWidget *parent = nullptr);
+    explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     QTimer *timer=new QTimer();
     QTime time;
-    int parejasRestantes; //definir variable
+    QVector<QString> tarjetas{"tarjeta01", "tarjeta02", "tarjeta03", "tarjeta04",
+                              "tarjeta05", "tarjeta06", "tarjeta07", "tarjeta08",
+                              "tarjeta09", "tarjeta10", "tarjeta11", "tarjeta12"};
+    QHash<QString, QString> reparto;
+    int puntaje=0;
+    bool jugadaIniciada;
+    QPushButton* tarjetaAnterior;
+    QPushButton* tarjetaActual;
+    int parejasRestantes;
+    QMessageBox msgBox;
+
 
 private slots:
-    void actualizarEstado();
     void actualizarCronometro();
+    void tarjetaDescubierta();
+    void mezclar(QVector<QString> &tarjetas);
+    void repartir(QVector<QString> &tarjetas, QHash<QString, QString> &reparto);
+    void definirResultadoParcial();
+    void reiniciarTarjetas();
+    void mostrarImagen();
     void definirResultadoFinal();
+    void actualizarEstado();
+    void inicializarJuego();
 
 
 private:
     Ui::MainWindow *ui;
 };
+
+
 #endif // MAINWINDOW_H
