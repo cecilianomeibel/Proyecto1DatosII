@@ -9,7 +9,7 @@ MainWindow::MainWindow(QWidget *parent) :
     //Connect timer to the slot that will handle the timer
     connect(timer, SIGNAL(timeout()), this, SLOT(actualizarEstado()));
 
-    //Connect each button to the same slot, which will figure out which button was pressed and show its associated image file accordingly
+    //Conectar cada boton Connect each button to the same slot, which will figure out which button was pressed and show its associated image file accordingly
     connect(ui->tarjeta01, SIGNAL(clicked()), this, SLOT(tarjetaDescubierta()));
     connect(ui->tarjeta02, SIGNAL(clicked()), this, SLOT(tarjetaDescubierta()));
     connect(ui->tarjeta03, SIGNAL(clicked()), this, SLOT(tarjetaDescubierta()));
@@ -22,14 +22,12 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->tarjeta10, SIGNAL(clicked()), this, SLOT(tarjetaDescubierta()));
     connect(ui->tarjeta11, SIGNAL(clicked()), this, SLOT(tarjetaDescubierta()));
     connect(ui->tarjeta12, SIGNAL(clicked()), this, SLOT(tarjetaDescubierta()));
-    connect(ui->tarjeta12, SIGNAL(clicked()), this, SLOT(tarjetaDescubierta()));
     connect(ui->tarjeta13, SIGNAL(clicked()), this, SLOT(tarjetaDescubierta()));
     connect(ui->tarjeta14, SIGNAL(clicked()), this, SLOT(tarjetaDescubierta()));
     connect(ui->tarjeta15, SIGNAL(clicked()), this, SLOT(tarjetaDescubierta()));
     connect(ui->tarjeta16, SIGNAL(clicked()), this, SLOT(tarjetaDescubierta()));
     connect(ui->tarjeta17, SIGNAL(clicked()), this, SLOT(tarjetaDescubierta()));
     connect(ui->tarjeta18, SIGNAL(clicked()), this, SLOT(tarjetaDescubierta()));
-
 
     inicializarJuego();
 }
@@ -167,7 +165,7 @@ void MainWindow::inicializarJuego(){
     ui->frame->setEnabled(true);
 
     //enable every tile and reset its image
-    QList<QPushButton *> botones =  ui->centralWidget->findChildren<QPushButton*>();
+    QList<QPushButton *> botones =  ui->centralwidget->findChildren<QPushButton*>();
     foreach (QPushButton* b, botones) {
         b->setEnabled(true);
         b->setStyleSheet("#" + b->objectName() + "{ }");
@@ -189,13 +187,13 @@ void MainWindow::actualizarEstado(){
 
 void MainWindow::mezclar(QVector<QString> &tarjetas){
     unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
-    shuffle (tarjetas.begin(), tarjetas.end(), std::default_random_engine(seed));
+    shuffle (tarjetas.begin(), tarjetas.end(), std::default_random_engine(seed)); //generador de numeros aleatorios
 }
 
 
 void MainWindow::repartir(QVector<QString> &tarjetas, QHash<QString, QString> &reparto){
     auto iterador=tarjetas.begin();
-    for (int i=1; i<=6; i++){
+    for (int i=1; i<=8; i++){
         QString file_name="0"+QString::number(i)+".png";
         reparto[(*iterador)]=file_name;
         iterador++;
