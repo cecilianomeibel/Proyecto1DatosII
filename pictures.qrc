@@ -8,10 +8,11 @@
         <file>06.png</file>
         <file>07.png</file>
         <file>08.png</file>
-        <file>fondo.jpg</file>
-        <file>fondo.png</file>
         <file>f1.png</file>
         <file>f2.jpg</file>
         <file>f3.jpg</file>
+        <file>fondo.png</file>
+        <file>fondo.jpg</file>
+        <file>09.png</file>
     </qresource>
 </RCC>
