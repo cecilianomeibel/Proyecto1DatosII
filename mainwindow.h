@@ -36,7 +36,7 @@ public:
     int parejasRestantes;
     QMessageBox msgBox; //mensaje para mostrarle al usuario
 
-
+//declaracion de variables
 private slots:
     void actualizarCronometro();
     void tarjetaDescubierta();
