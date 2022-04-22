@@ -35,13 +35,13 @@ MainWindow::MainWindow(QWidget *parent) :
 
 void MainWindow::tarjetaDescubierta(){
     //get the tile that was pressed
-    tarjetaActual=qobject_cast<QPushButton*>(sender());
+    tarjetaActual=qobject_cast<QPushButton*>(sender()); //para saber cual boton ha sido presionado
 
     //get the image linked to that tile in the map and set tile background to it
     mostrarImagen();
 
     //disable current tile so it can't be clicked again (unless there is no match, in which case it will be re-enabled)
-    tarjetaActual->setEnabled(false);
+    tarjetaActual->setEnabled(false); //bloquea un doble click sobre la misma tarjeta
 
     //do something depending on whether the revealed tile is the first or the second tile in the turn
     if (!jugadaIniciada){
@@ -116,7 +116,7 @@ void MainWindow::definirResultadoFinal(){
 void MainWindow::definirResultadoParcial(){
     //check if there is a match (the current tile matches the previous tile in the turn)
     if (reparto[tarjetaActual->objectName()]==reparto[tarjetaAnterior->objectName()]){
-        puntaje+=15;
+        puntaje+=10;
         ui->lblPuntaje->setText(QString::number(puntaje));
         parejasRestantes--;
 
@@ -124,7 +124,7 @@ void MainWindow::definirResultadoParcial(){
         definirResultadoFinal();
     }
     else{
-        puntaje-=5;
+        puntaje-=3;
         ui->lblPuntaje->setText(QString::number(puntaje));
 
         //disable the whole tile section so no tiles can be turned during the 1-second "memorizing period"
@@ -144,13 +144,13 @@ void MainWindow::inicializarJuego(){
     ui->lblPuntaje->setText(QString::number(puntaje));;
 
     //Set matches counter
-    parejasRestantes=6;
+    parejasRestantes=9;
 
     //Set clock for countdown
-    time.setHMS(0,1,0);
+    time.setHMS(0,1,30);
 
     //Initialize countdown
-    ui->cronometro->setText(time.toString("m:ss"));
+    ui->cronometro->setText(time.toString("m:ss")); //formato del cronometro
 
     // Start timer with a value of 1000 milliseconds, indicating that it will time out every second.
     timer->start(1000);
