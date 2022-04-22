@@ -36,35 +36,10 @@ color: white;
 background-image: url(://f3.jpg);
 }</string>
    </property>
-   <widget class="QLabel" name="instrucciones">
-    <property name="geometry">
-     <rect>
-      <x>120</x>
-      <y>40</y>
-      <width>601</width>
-      <height>91</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">#instrucciones {
-color: white;
-}</string>
-    </property>
-    <property name="text">
-     <string>Haga click en los recuadros para encontrar las parejas</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="cronometro">
     <property name="geometry">
      <rect>
-      <x>530</x>
+      <x>580</x>
       <y>20</y>
       <width>81</width>
       <height>20</height>
@@ -84,22 +59,28 @@ color: white;
    <widget class="QLabel" name="titulo">
     <property name="geometry">
      <rect>
-      <x>240</x>
+      <x>180</x>
       <y>30</y>
-      <width>201</width>
+      <width>331</width>
       <height>31</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>Stencil</family>
-      <pointsize>16</pointsize>
+      <pointsize>22</pointsize>
      </font>
     </property>
     <property name="styleSheet">
      <string notr="true">#titulo {
-color: white;
-}</string>
+color: black;
+qproperty-alignment: AlignCenter;
+background: pink;
+bord: 3px solid silver;
+border-radius: 7px ;
+}
+
+</string>
     </property>
     <property name="text">
      <string>Juego de Memoria</string>
@@ -361,8 +342,8 @@ color: white;
    <widget class="QLabel" name="puntuacion">
     <property name="geometry">
      <rect>
-      <x>240</x>
-      <y>420</y>
+      <x>260</x>
+      <y>410</y>
       <width>111</width>
       <height>16</height>
      </rect>
@@ -380,28 +361,71 @@ color: white;
 }</string>
     </property>
     <property name="text">
-     <string>Puntuación</string>
+     <string>Puntuación:</string>
     </property>
    </widget>
    <widget class="QLabel" name="lblPuntaje">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>420</y>
-      <width>47</width>
-      <height>13</height>
+      <x>370</x>
+      <y>410</y>
+      <width>41</width>
+      <height>21</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#lblPuntaje{
+color: black;
+qproperty-alignment: AlignCenter;
+background: pink;
+bord: 3px solid silver;
+border-radius: 7px ;
+}
+
+</string>
+    </property>
     <property name="text">
-     <string>TextLabel</string>
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="instrucciones">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>40</y>
+      <width>601</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#instrucciones {
+color: white;
+}</string>
+    </property>
+    <property name="text">
+     <string>Haga click en los recuadros para encontrar las parejas</string>
     </property>
    </widget>
    <zorder>frame</zorder>
-   <zorder>instrucciones</zorder>
    <zorder>cronometro</zorder>
    <zorder>titulo</zorder>
    <zorder>puntuacion</zorder>
    <zorder>lblPuntaje</zorder>
+   <zorder>instrucciones</zorder>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
